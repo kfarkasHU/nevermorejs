@@ -2,4 +2,21 @@
     <head>
         <script src="dist/nevermore.js"></script>
     </head>
+    <body>
+        <demo></demo>
+        <script>
+            const core = Nevermore.nevercore;
+
+            class DemoComponent {
+                beer = "sör";
+            }
+            class InnerDemoComponent {
+                empty = "üres";
+            }
+
+            core._instance.factory.registerComponent("demo", DemoComponent, "<h1>hello world</h1><h2>empty black</h2><inner-demo></inner-demo>", "h1 { color: red; }");
+            core._instance.factory.registerComponent("inner-demo", InnerDemoComponent, "<h1>inner hello world</h1>", "h1 { color: green; }");
+            Nevermore.run();
+        </script>
+    </body>
 </html>
