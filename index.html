@@ -5,17 +5,15 @@
     <body>
         <demo></demo>
         <script>
-            const core = Nevermore.nevercore;
-
             class DemoComponent {
-                beer = "sör";
+                beer = "beer";
             }
             class InnerDemoComponent {
-                empty = "üres";
+                empty = "empty";
             }
 
-            core._instance.factory.registerComponent("demo", DemoComponent, "<h1>hello world</h1><h2>empty black</h2><inner-demo></inner-demo>", "h1 { color: red; }");
-            core._instance.factory.registerComponent("inner-demo", InnerDemoComponent, "<h1>inner hello world</h1>", "h1 { color: green; }");
+            Nevermore.registerComponent("demo", DemoComponent, "<h1>hello world</h1><h2>empty black</h2><inner-demo></inner-demo>", "h1 { color: red; }");
+            Nevermore.registerComponent("inner-demo", InnerDemoComponent, "<h1>inner hello world</h1>", "h1 { color: green; }");
             Nevermore.run();
         </script>
     </body>
